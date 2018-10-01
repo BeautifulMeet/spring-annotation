@@ -1,6 +1,8 @@
-package com.chen.test;
+package com.chen;
 
+import com.chen.aop.MathUtil;
 import com.chen.bean.Person;
+import com.chen.config.AspectConfig;
 import com.chen.config.BeanConfig;
 import com.chen.config.ComponentScanConfig;
 import org.junit.Test;
@@ -15,6 +17,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  * @date 2018/8/517:01
  */
 public class MainTest {
+
 
 
     /**
@@ -43,6 +46,13 @@ public class MainTest {
             System.out.println(name);
         }
 
+    }
+
+    @Test
+    public void AOPTest(){
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AspectConfig.class);
+        MathUtil mathUtil = applicationContext.getBean(MathUtil.class);
+        mathUtil.getValue("hello");
     }
 
 }

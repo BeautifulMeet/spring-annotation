@@ -73,6 +73,13 @@
             <scope>compile</scope>
         </dependency>
 
+        <!-- aop -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aspects</artifactId>
+            <version>4.3.12.RELEASE</version>
+        </dependency>
+
     </dependencies>
 
 </project>
